@@ -1,6 +1,5 @@
 
-**Purpose**: This code is used to examine the assumption of measurement invariance using clinical data. 
-If you are interested in using their data, please submit an application to access data. 
+**Purpose**: This code is used to examine the assumption of measurement invariance for ordered categorical data. 
 
 **Data**: Data can be accessed to : [CENTER-TBI](https://www.center-tbi.eu/).Unfortunately, I can not provide any data here. 
 If you are interested in using their data, please submit an application to access data.
