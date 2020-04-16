@@ -1,6 +1,7 @@
 library(lavaan)
 # There are 6 items and each item is measured by a 5-point Likert-scale. 
 # Items: q10,q11,q12,q13,q14,q15
+# The number of groups: 3
 
 # 1. The configural model
 # a variance of an item is fixed as 1; an intercept of an item is fixed as 0; a mean and a variance of a factor is fixed as 0
