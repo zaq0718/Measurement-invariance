@@ -1,5 +1,8 @@
 library(lavaan)
-#1. The configural model
+# There are 6 items and each item is measured by a 5-point Likert-scale. 
+# Items: q10,q11,q12,q13,q14,q15
+
+# 1. The configural model
 # a variance of an item is fixed as 1; an intercept of an item is fixed as 0; a mean and a variance of a factor is fixed as 0
 # recommended by Millsap & Yun-Tein (2004)
 
@@ -30,7 +33,7 @@ m_conf_theta <- lavaan(configural_theta,
                        data = All_C, group = "CNT", 
                        parameterization="theta", estimator="wlsmv",
                        auto.fix.first = FALSE)
-summary(m_conf_theta,fit.measures=TRUE)# CFI:0.993;TLI:0.989;RMSEA=0.109;SRMR=0.046
+summary(m_conf_theta,fit.measures=TRUE)
 
 # 2. The Threshold model
 # All thresholds, means and variances of a factor were constrained across groups 
@@ -63,9 +66,9 @@ m_Threshold_theta <- lavaan(Threshold_theta,
                        data = All_C, group = "CNT", 
                        parameterization="theta", estimator="wlsmv",
                        auto.fix.first = FALSE)
-summary(m_Threshold_theta,fit.measures=TRUE)# CFI:0.992;TLI:0.993;RMSEA=0.085;SRMR=0.046
+summary(m_Threshold_theta,fit.measures=TRUE)
 
-#3. The Threshold and loading model
+# 3. The Threshold and loading model
 # All thresholds, loadings, means of a factor  were constrained across groups 
 # Only constrained intercepts, residual variance, and a variance of a factor for a reference group
 
@@ -96,11 +99,9 @@ m_loadings_theta <- lavaan(loadings_theta,
                             data = All_C, group = "CNT", 
                             parameterization="theta", estimator="wlsmv",
                             auto.fix.first = FALSE)
-summary(m_loadings_theta,fit.measures=TRUE)# CFI:0.992;TLI:0.994;RMSEA=0.079;SRMR=0.046
+summary(m_loadings_theta,fit.measures=TRUE)
 
-
-
-#4. The Threshold,loading ,and intercept model
+# 4. The Threshold,loading ,and intercept model
 # All thresholds, loadings, means of a factor, and intercepts=0  were constrained across groups 
 # Only constrained intercepts, residual variance, and a variance of a factor for a reference group
 
@@ -131,9 +132,9 @@ m_intercepts_theta <- lavaan(intercepts_theta,
                            data = All_C, group = "CNT", 
                            parameterization="theta", estimator="wlsmv",
                            auto.fix.first = FALSE)
-summary(m_intercepts_theta ,fit.measures=TRUE)# CFI:0.987;TLI:0.992;RMSEA=0.093;SRMR=0.047
+summary(m_intercepts_theta ,fit.measures=TRUE)
 
-#5. The Threshold,loading ,intercept and residuals model
+# 5. The Threshold,loading ,intercept and residuals model
 # All thresholds, loadings, means of a factor, intercepts=0, and residuals =1 were constrained across groups 
 # Only constrained intercepts and a variance of a factor for a reference group
 
